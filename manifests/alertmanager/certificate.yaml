@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: alertmanager
+  namespace: alertmanager
+spec:
+  secretName: alertmanager-tls
+  dnsNames:
+  - "alertmanager"
+  - "*.alertmanager.svc.cluster.local"
+  - "*.alertmanager"
+  issuerRef:
+    name: selfsigned-issuer
+    kind: ClusterIssuer

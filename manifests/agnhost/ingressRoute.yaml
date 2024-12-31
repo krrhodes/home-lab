@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: agnhost
+  namespace: agnhost
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - kind: Rule
+    match: Host(`agnhost`)
+    services:
+    - name: agnhost
+      port: 8080
+  tls:
+    secretName: agnhost-tls

@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: alertmanager
+  namespace: alertmanager
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - kind: Rule
+    match: Host(`alertmanager`)
+    services:
+    - name: alertmanager
+      port: 9093
+  tls:
+    secretName: alertmanager-tls
