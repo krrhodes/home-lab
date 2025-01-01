@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: simple-crud-app-react-nodejs-frontend
+  namespace: simple-crud-app-react-nodejs-frontend
+data:
+  REACT_APP_API_URL: 'http://simple-crud-app-react-nodejs-backend:3333/'
