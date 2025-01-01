@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: simple-crud-app-react-nodejs-backend
+  namespace: simple-crud-app-react-nodejs-backend
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - kind: Rule
+    match: Host(`simple-crud-app-react-nodejs-backend`)
+    services:
+    - name: simple-crud-app-react-nodejs-backend
+      port: 3333
+  tls:
+    secretName: simple-crud-app-react-nodejs-backend-tls

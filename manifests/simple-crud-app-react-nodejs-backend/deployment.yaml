@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-crud-app-react-nodejs-backend
+  namespace: simple-crud-app-react-nodejs-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-crud-app-react-nodejs-backend
+  template:
+    metadata:
+      name: simple-crud-app-react-nodejs-backend
+      labels:
+        app: simple-crud-app-react-nodejs-backend
+    spec:
+      containers:
+      - name: simple-crud-app-react-nodejs-backend
+        image: krrhodes/simple-crud-app-react-nodejs-backend:latest
+        ports:
+          - containerPort: 3333

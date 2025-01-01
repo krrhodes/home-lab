@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: simple-crud-app-react-nodejs-frontend
+  namespace: simple-crud-app-react-nodejs-frontend
+spec:
+  secretName: simple-crud-app-react-nodejs-frontend-tls
+  dnsNames:
+  - "simple-crud-app-react-nodejs-frontend"
+  - "*.simple-crud-app-react-nodejs-frontend.svc.cluster.local"
+  - "*.simple-crud-app-react-nodejs-frontend"
+  issuerRef:
+    name: selfsigned-issuer
+    kind: ClusterIssuer
