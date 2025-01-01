@@ -23,3 +23,6 @@ When you are done teardown.sh can be used to stop the environment:
 ```bash
 scripts/teardown.sh
 ```
+
+## Details
+Thats it! Now each app in the cluster will be reachable at `https://<app name>:8082`
