@@ -49,6 +49,10 @@ helm install promtail grafana/promtail  \
 kubectl apply -f 'manifests/**/namespace.yaml'
 kubectl apply -f manifests/ --recursive
 
+kubectl -n keycloak apply -f https://raw.githubusercontent.com/keycloak/keycloak-k8s-resources/26.0.7/kubernetes/keycloaks.k8s.keycloak.org-v1.yml
+kubectl -n keycloak apply -f https://raw.githubusercontent.com/keycloak/keycloak-k8s-resources/26.0.7/kubernetes/keycloakrealmimports.k8s.keycloak.org-v1.yml
+kubectl -n keycloak apply -f https://raw.githubusercontent.com/keycloak/keycloak-k8s-resources/26.0.7/kubernetes/kubernetes.yml
+
 # Add all ingress route to /etc/hosts.
 # TODO: Find a better way to do this, maybe a crd to do at runtime
 echo "### Home Lab Configuration ###" | sudo tee -a /etc/hosts

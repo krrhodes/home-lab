@@ -19,6 +19,3 @@ spec:
         image: krrhodes/simple-crud-app-react-nodejs-frontend:latest
         ports:
           - containerPort: 80
-        envFrom:
-          - configMapRef:
-              name: simple-crud-app-react-nodejs-frontend

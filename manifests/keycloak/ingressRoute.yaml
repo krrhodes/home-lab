@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: keycloak
+  namespace: keycloak
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - kind: Rule
+    match: Host(`keycloak`)
+    services:
+    - name: keycloak-service
+      port: 8443
+  tls:
+    secretName: keycloak-tls

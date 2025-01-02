@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: keycloak
+  namespace: keycloak
+spec:
+  subject: # Keycloak doesnt like certs without DN field, which is absent from self-signed certs without this field
+    organizations:
+      - keycloak
+  secretName: keycloak-tls
+  dnsNames:
+  - "keycloak"
+  - "*.keycloak.svc.cluster.local"
+  - "*.keycloak"
+  issuerRef:
+    name: selfsigned-issuer
+    kind: ClusterIssuer
