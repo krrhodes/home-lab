@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ajv": "^8.17.1",
     "axios": "^0.21.1",
+    "eslint-config-react": "^1.1.7",
+    "json-loader": "^0.5.7",
     "querystring": "^0.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -17,9 +20,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
